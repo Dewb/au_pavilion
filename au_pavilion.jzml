@@ -1,0 +1,209 @@
+<JZML>
+<PROJECT version="5320" width="1024" height="724" osc_target="0" midi_target="-1" kbmouse_target="-1" skin="Pixel"/>
+<WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Canvas" text="Canvas" x="0" y="0" width="1024" height="724" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
+<SCRIPT name="draw()" script="decl c = getobject();
+
+canvas_clear(c);
+
+drawShape({
+175.4651, 399.4488,
+136.8628, 401.7240,
+136.8628, 328.1309,
+187.8162, 346.7657, 
+175.4651, 399.4488
+}, 1);
+
+drawShape({
+391.8756, 317.4985,
+391.8756, 408.3838,
+361.5897, 406.2753,
+327.6483, 371.3407,
+332.0065, 349.0492,
+356.1992, 322.9084,
+391.8756, 317.4985
+}, 2);
+
+drawShape({
+391.8756, 408.3838,
+391.8756, 477.6090,
+356.0759, 483.2876,
+330.3382, 459.2326,
+361.5897, 406.2753,
+391.8756, 408.3838
+}, 3);
+
+drawShape({
+321.6553, 271.4818,
+391.8756, 271.4818,
+391.8756, 317.4985,
+356.1992, 322.9084,
+321.6553, 271.4818
+}, 4);
+
+drawShape({
+330.3382, 459.2326,
+308.2280, 457.9317,
+288.2624, 436.1796,
+297.6006, 388.6947,
+327.6483, 371.3407,
+361.5897, 406.2753,
+330.3382, 459.2326
+}, 5);
+
+drawShape({
+344.6557, 526.4946,
+284.0367, 526.4946,
+280.1591, 507.6523,
+308.2280, 457.9317,
+330.3382, 459.2326,
+356.0759, 483.2876,
+344.6557, 526.4946
+}, 6);
+
+drawShape({
+269.5896, 271.4818,
+321.6553, 271.4818,
+356.1992, 322.9084,
+332.0065, 349.0492,
+256.4053, 307.0998,
+269.5896, 271.4818
+}, 7);
+
+drawShape({
+297.6006, 388.6947,
+250.6395, 369.1725,
+234.9276, 326.2118,
+256.4053, 307.0998,
+332.0065, 349.0492,
+327.6483, 371.3407,
+297.6006, 388.6947
+}, 8);
+
+drawShape({
+280.1591, 507.6523,
+231.7863, 479.4869,
+253.6746, 439.0007,
+288.2624, 436.1796,
+308.2280, 457.9317,
+280.1591, 507.6523
+}, 9);
+
+drawShape({
+288.2624, 436.1796,
+253.6746, 439.0007,
+227.1278, 409.9056,
+250.6395, 369.1725,
+297.6006, 388.6947,
+288.2624, 436.1796
+}, 10);
+
+drawShape({
+284.0367, 526.4946,
+198.7990, 526.4946,
+210.3310, 485.8333,
+231.7863, 479.4869,
+280.1591, 507.6523,
+284.0367, 526.4946
+}, 11);
+
+drawShape({
+231.7863, 479.4869,
+210.3310, 485.8333,
+186.1869, 461.0388,
+190.8875, 413.9254,
+227.1278, 409.9056,
+253.6746, 439.0007,
+231.7863, 479.4869
+}, 12);
+
+drawShape({
+176.2526, 271.4818,
+269.5896, 271.4818,
+256.4053, 307.0998,
+234.9276, 326.2118,
+221.2725, 325.8104,
+176.2526, 271.4818
+}, 13);
+
+drawShape({
+227.1278, 409.9056,
+190.8875, 413.9254,
+175.4651, 399.4488,
+187.8162, 346.7657,
+221.2725, 325.8104,
+234.9276, 326.2118,
+250.6395, 369.1725,
+227.1278, 409.9056
+}, 14);
+
+drawShape({
+136.8628, 271.4818,
+176.2526, 271.4818,
+221.2725, 325.8104,
+187.8162, 346.7657,
+136.8628, 328.1309,
+136.8628, 271.4818
+}, 15);
+
+drawShape({
+198.7990, 526.4946,
+136.8628, 526.4946,
+136.8628, 472.0711,
+186.1869, 461.0388,
+210.3310, 485.8333,
+198.7990, 526.4946
+}, 16);
+
+drawShape({
+186.1869, 461.0388,
+136.8628, 472.0711,
+136.8628, 401.7240,
+175.4651, 399.4488,
+190.8875, 413.9254,
+186.1869, 461.0388
+}, 17);
+
+drawShape({
+391.8756, 477.6090,
+391.8756, 526.4946,
+344.6557, 526.4946,
+356.0759, 483.2876,
+391.8756, 477.6090
+}, 18);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="update()" script="decl c = getobject();
+canvas_refresh(c);" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawShape(shape, id)" script="decl c = getobject();
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; 
+decl h = rect[3];
+
+canvas_setLineWidth(c, 2);
+canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
+
+canvas_beginPath(c);
+canvas_moveTo(c, shape[0], shape[1]);
+
+decl i, segmentCount = sizeof(shape) / 2;
+for (i=1; i<segmentCount; i++) {
+	canvas_lineTo(c, shape[2*i], shape[2*i + 1]);
+}
+canvas_lineTo(c, shape[0], shape[1]);
+if (hitStates[id]) {
+	canvas_fill(c);
+	hitStates[id] = 0;
+} else {
+	canvas_stroke(c);
+}
+canvas_addHitRegion(c,0,id);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawShape" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onHit(cursor,hit,x,y)" script="if (hit) {
+	hitStates[hit] = 1;
+}
+" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<VARIABLE name="hitStates={0, 0, 0, 0, 0, 0, 0, 0}" send="1" osc_target="0" osc_trigger="1" osc_message="/hitStates" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</JZML>
