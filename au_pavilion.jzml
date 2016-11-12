@@ -1,9 +1,27 @@
 <JZML>
 <PROJECT version="5320" width="1024" height="724" osc_target="0" midi_target="-1" kbmouse_target="-1" skin="Pixel"/>
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
-<WINDOW class="Canvas" text="Canvas" x="0" y="0" width="1024" height="724" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
+<WINDOW class="Canvas" text="Canvas" x="66" y="49" width="687" height="643" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
 <SCRIPT name="update()" script="decl c = getobject();
-canvas_refresh(c);" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+canvas_refresh(c);
+
+decl i;
+decl waveMax = 800;
+
+for (i = 1; i < 19; i++)
+{
+  if (waves[i] > 0)
+  {
+     waves[i] = waves[i] + wave_speed[i];
+     if (waves[i] > waveMax) 
+     {
+       waves[i] = 0;
+     }
+   }
+}
+
+updateLights();
+" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="drawShape(shape, id)" script="decl c = getobject();
 
 decl rect = getattribute(c, 'rect');
@@ -17,9 +35,6 @@ decl h_min = 271.4818;
 decl w_max = 391.8756;
 decl h_max = 526.4946;
 
-canvas_setLineWidth(c, 2);
-canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
-
 canvas_beginPath(c);
 canvas_moveTo(c,
  margin + screendim * srange(shape[0], w_min, w_max),
@@ -32,20 +47,41 @@ for (i=1; i<segmentCount; i++) {
 }
 canvas_lineTo(c,  margin + screendim * srange(shape[0], w_min, w_max),
  margin + screendim * srange(shape[1], h_min, h_max));
+canvas_closePath(c);
+
+canvas_setLineWidth(c, 2);
+canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
 
 if (hitStates[id]) {
+    canvas_setFillStyle(c, {128, 128, 80});
 	canvas_fill(c);
-	hitStates[id] = 0;
-} else {
+} else {    
 	canvas_stroke(c);
 }
 canvas_addHitRegion(c,0,id);
-" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawShape" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+
+decl center_x = margin + screendim * srange(waveorigin_x[id], w_min, w_max);
+decl center_y = margin + screendim * srange(waveorigin_y[id], h_min, h_max);
+
+if (lightAddress[id] >= 0)
+{
+  canvas_setStrokeStyle(c, {1.0, 0.4, 0.4, 0.4});
+  decl lightPath = canvas_createPath();
+  canvas_arc(lightPath, center_x, center_y, 6, 0, 2*pi, 0);
+  canvas_strokePath(c, lightPath);
+}
+
+if (waves[id] > 0) 
+{
+  decl wavePath = canvas_createPath();
+  canvas_arc(wavePath, center_x, center_y, waves[id], 0, 6.28318, 0);
+  canvas_setLineWidth(c, 3);
+  canvas_setStrokeStyle(c, {0.75, 200, 128, 100});
+  canvas_strokePath(c, wavePath);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawShape" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onHit(cursor,hit,x,y)" script="if (hit) {
-	hitStates[hit] = 1;
-    oscout(0, '/dmx', {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8});
-    oscout(1, '/dmx', {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8});
-    
+	hitStates[hit] = cursor;
+    lastHitTimes[hit] = time;
 }
 " trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="draw()" script="decl c = getobject();
@@ -69,6 +105,10 @@ drawShape({
 356.1992, 322.9084,
 391.8756, 317.4985
 }, 2);
+
+waveorigin_x[2] = 359;
+waveorigin_y[2] = 360;
+lightAddress[2] = 0;
 
 drawShape({
 391.8756, 408.3838,
@@ -144,6 +184,11 @@ drawShape({
 288.2624, 436.1796
 }, 10);
 
+waveorigin_x[10] = 269;
+waveorigin_y[10] = 402;
+lightAddress[10] = 1;
+
+
 drawShape({
 284.0367, 526.4946,
 198.7990, 526.4946,
@@ -218,6 +263,44 @@ drawShape({
 391.8756, 477.6090
 }, 18);
 
+drawBorder();" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onMove(cursor,hit,x,y)" script="decl i;
+for (i=0; i < 19; i++)
+{
+   if (hitStates[i] == cursor && hit != i)
+   {
+      hitStates[i] = 0;
+   }
+}
+
+hitStates[hit] = cursor;
+" trigger_script="" trigger_type="255" trigger_name="onCursorMove" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onMove" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onUp(cursor,hit,x,y)" script="decl i;
+decl numTouches = 0;
+
+for (i=0; i < 19; i++)
+{
+   if (hitStates[i] == cursor)
+   {
+      hitStates[i] = 0;
+   }
+
+   if (hitStates[i] > 0)
+   {
+      numTouches++;
+   }
+}
+
+decl holdTime = time - lastHitTimes[hit];
+
+if (numTouches == 0 && holdTime < 0.500)
+{
+   // quick tap
+   waves[hit] = 1;
+   wave_speed[hit] = 5 - holdTime / 0.1;
+} 
+" trigger_script="" trigger_type="255" trigger_name="onCursorUp" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onUp" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawBorder()" script="decl c = getobject();
 
 decl rect = getattribute(c, 'rect');
 decl cw = rect[2]; 
@@ -225,30 +308,102 @@ decl ch = rect[3];
 decl margin = 4;
 decl screendim = min(cw, ch) - 2 * margin;
 
+canvas_setLineWidth(c, 2);
+canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
 canvas_rect(c, margin, margin, screendim, screendim); 
-canvas_stroke(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+canvas_stroke(c);
+
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawBorder" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Fader" x="928" y="132" width="79" height="573" id="1" state="1" group="0" font="tahoma,10,0" send="1" osc_target="1" midi_target="-2" kbmouse_target="-2" capture="1" color="2582381" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="3" unit="" value="0" zoom="1.000000">
-<PARAM name="x=" value="0.000000" send="25" osc_target="-2" osc_trigger="1" osc_message="/dmx" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=x" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Canvas" text="Canvas2" x="837" y="49" width="128" height="636" id="8" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="1">
+<VARIABLE name="position=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas2/position" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl cw = rect[2]; 
+decl ch = rect[3];
+
+canvas_setLineWidth(c, 4);
+canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
+
+canvas_beginPath(c);
+
+canvas_rect(c, 0, 0, cw, ch); 
+
+if (position >= 0)
+{
+   canvas_moveTo(c, 0, position);
+   canvas_lineTo(c, cw, position);
+}
+
+canvas_closePath(c);
+canvas_stroke(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="update()" script="decl c = getobject();
+canvas_refresh(c);" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onHit(cursor,hit,x,y)" script="position = y;
+
+decl c = getobject();
+decl rect = getattribute(c, 'rect');
+decl ch = rect[3];
+
+updateLights(1.0 - y / ch);" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onMove(cursor,hit,x,y)" script="position = y;
+
+decl c = getobject();
+decl rect = getattribute(c, 'rect');
+decl ch = rect[3];
+
+updateLights(1.0 - y / ch);" trigger_script="" trigger_type="255" trigger_name="onCursorMove" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/onMove" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onUp(cursor,hit,x,y)" script="position = -1;" trigger_script="" trigger_type="255" trigger_name="onCursorUp" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/onUp" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="updateLights(pos)" script="decl i;
+if (pos < 0) { pos = 0; }
+if (pos > 1) { pos = 1; }
+
+decl numTouches = 0;
+
+for (i=0; i < 19; i++)
+{
+   if (hitStates[i] > 0)
+   {
+      numTouches++;
+   }
+}
+
+if (numTouches == 0)
+{
+   for (i=0; i < 8; i++)
+   {
+      setLight(i, pos);
+   }
+} else {
+   for (i=0; i < 19; i++)
+   {
+      if (hitStates[i] > 0 && lightAddress[i] >= 0)
+      {
+         setLight(lightAddress[i], pos);  
+      }
+   }
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas2/updateLights" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="LemurMenu" text="Menu" x="797" y="15" width="160" height="83" id="5" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Manual,Ripples">
-<PARAM name="selection=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Menu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="MultiSlider" text="MultiSlider" x="742" y="132" width="169" height="565" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="0" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="1" label="0" multicolor="0" nbr="8" physic="0">
-<PARAM name="x=" value="0.500000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="25" osc_target="1" osc_trigger="1" osc_message="/dmx" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="tension=0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/tension" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="height=0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/height" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onTouch()" script="" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/MultiSlider/onTouch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-</WINDOW>
-</WINDOW>
-<VARIABLE name="hitStates={0, 0, 0, 0, 0, 0, 0, 0}" send="1" osc_target="0" osc_trigger="1" osc_message="/hitStates" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="hitStates={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/hitStates" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <FUNCTION name="srange(val, min, max)=(val - min) / (max - min)" send="1"/>
+<VARIABLE name="lightValues={0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/lightValues" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="waves={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/waves" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,961,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="waveorigin_x={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/waveorigin_x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="waveorigin_y={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/waveorigin_y" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,1280,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="wave_speed={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/wave_speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,1280,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastHitTimes={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/lastHitTimes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="19,2,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lightsDirty=0" send="1" osc_target="0" osc_trigger="1" osc_message="/lightsDirty" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lightAddress={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}" send="1" osc_target="0" osc_trigger="1" osc_message="/lightAddress" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="updateLights()" script="if (lightsDirty)
+{
+   oscout(0, '/dmx', lightValues);
+   oscout(1, '/dmx', lightValues);
+   lightsDirty = 0;
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/updateLights" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="setLight(index, value)" script="lightValues[index] = value;
+lightsDirty = 1;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/setLight" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </JZML>
