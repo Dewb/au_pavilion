@@ -2,6 +2,52 @@
 <PROJECT version="5320" width="1024" height="724" osc_target="0" midi_target="-1" kbmouse_target="-1" skin="Pixel"/>
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Canvas" text="Canvas" x="0" y="0" width="1024" height="724" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
+<SCRIPT name="update()" script="decl c = getobject();
+canvas_refresh(c);" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawShape(shape, id)" script="decl c = getobject();
+
+decl rect = getattribute(c, 'rect');
+decl cw = rect[2]; 
+decl ch = rect[3];
+decl margin = 5;
+decl screendim = min(cw, ch) - 2 * margin;
+
+decl w_min = 136.8628;
+decl h_min = 271.4818;
+decl w_max = 391.8756;
+decl h_max = 526.4946;
+
+canvas_setLineWidth(c, 2);
+canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
+
+canvas_beginPath(c);
+canvas_moveTo(c,
+ margin + screendim * srange(shape[0], w_min, w_max),
+ margin + screendim * srange(shape[1], h_min, h_max));
+
+decl i, segmentCount = sizeof(shape) / 2;
+for (i=1; i<segmentCount; i++) {
+	canvas_lineTo(c,  margin + screendim * srange(shape[2*i], w_min, w_max),
+ margin + screendim * srange(shape[2*i+1], h_min, h_max));
+}
+canvas_lineTo(c,  margin + screendim * srange(shape[0], w_min, w_max),
+ margin + screendim * srange(shape[1], h_min, h_max));
+
+if (hitStates[id]) {
+	canvas_fill(c);
+	hitStates[id] = 0;
+} else {
+	canvas_stroke(c);
+}
+canvas_addHitRegion(c,0,id);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawShape" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onHit(cursor,hit,x,y)" script="if (hit) {
+	hitStates[hit] = 1;
+    oscout(0, '/dmx', {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8});
+    oscout(1, '/dmx', {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8});
+    
+}
+" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="draw()" script="decl c = getobject();
 
 canvas_clear(c);
@@ -171,39 +217,38 @@ drawShape({
 356.0759, 483.2876,
 391.8756, 477.6090
 }, 18);
-" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="update()" script="decl c = getobject();
-canvas_refresh(c);" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="drawShape(shape, id)" script="decl c = getobject();
+
 
 decl rect = getattribute(c, 'rect');
-decl w = rect[2]; 
-decl h = rect[3];
+decl cw = rect[2]; 
+decl ch = rect[3];
+decl margin = 4;
+decl screendim = min(cw, ch) - 2 * margin;
 
-canvas_setLineWidth(c, 2);
-canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
-
-canvas_beginPath(c);
-canvas_moveTo(c, shape[0], shape[1]);
-
-decl i, segmentCount = sizeof(shape) / 2;
-for (i=1; i<segmentCount; i++) {
-	canvas_lineTo(c, shape[2*i], shape[2*i + 1]);
-}
-canvas_lineTo(c, shape[0], shape[1]);
-if (hitStates[id]) {
-	canvas_fill(c);
-	hitStates[id] = 0;
-} else {
-	canvas_stroke(c);
-}
-canvas_addHitRegion(c,0,id);
-" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawShape" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="onHit(cursor,hit,x,y)" script="if (hit) {
-	hitStates[hit] = 1;
-}
-" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+canvas_rect(c, margin, margin, screendim, screendim); 
+canvas_stroke(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Fader" text="Fader" x="928" y="132" width="79" height="573" id="1" state="1" group="0" font="tahoma,10,0" send="1" osc_target="1" midi_target="-2" kbmouse_target="-2" capture="1" color="2582381" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="3" unit="" value="0" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="25" osc_target="-2" osc_trigger="1" osc_message="/dmx" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="Menu" x="797" y="15" width="160" height="83" id="5" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Manual,Ripples">
+<PARAM name="selection=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Menu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="MultiSlider" text="MultiSlider" x="742" y="132" width="169" height="565" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="0" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="1" label="0" multicolor="0" nbr="8" physic="0">
+<PARAM name="x=" value="0.500000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="25" osc_target="1" osc_trigger="1" osc_message="/dmx" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="tension=0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/tension" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="height=0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/height" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/MultiSlider/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onTouch()" script="" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/MultiSlider/onTouch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 <VARIABLE name="hitStates={0, 0, 0, 0, 0, 0, 0, 0}" send="1" osc_target="0" osc_trigger="1" osc_message="/hitStates" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<FUNCTION name="srange(val, min, max)=(val - min) / (max - min)" send="1"/>
 </JZML>
