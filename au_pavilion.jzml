@@ -3,6 +3,24 @@
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Canvas" text="Canvas" x="0" y="0" width="1024" height="724" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
 <VARIABLE name="margin=40" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/margin" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-12264,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape1=" value="175.465103,399.448792,136.862793,401.723999,136.862793,328.130890,187.816193,346.765717,175.465103,399.448792" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape1" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20432,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape2=" value="391.875610,317.498474,391.875610,408.383759,361.589691,406.275330,327.648315,371.340698,332.006500,349.049225,356.199219,322.908386,391.875610,317.498474" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape2" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16408,-1,-1" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape3=" value="391.875610,408.383759,391.875610,477.609009,356.075897,483.287598,330.338196,459.232635,361.589691,406.275330,391.875610,408.383759" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape3" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12312,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape4=" value="321.655304,271.481781,391.875610,271.481781,391.875610,317.498474,356.199219,322.908386,321.655304,271.481781" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape4" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,14654,17281" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape5=" value="330.338196,459.232635,308.227997,457.931702,288.262421,436.179626,297.600616,388.694702,327.648315,371.340698,361.589691,406.275330,330.338196,459.232635" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape5" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape6=" value="344.655701,526.494690,284.036713,526.494690,280.159088,507.652313,308.227997,457.931702,330.338196,459.232635,356.075897,483.287598,344.655701,526.494690" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape6" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17336,-10989,17341" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape7=" value="269.589600,271.481781,321.655304,271.481781,356.199219,322.908386,332.006500,349.049225,256.405304,307.099792,269.589600,271.481781" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape7" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="48,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape8=" value="297.600616,388.694702,250.639511,369.172516,234.927597,326.211823,256.405304,307.099792,332.006500,349.049225,327.648315,371.340698,297.600616,388.694702" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape8" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape9=" value="280.159088,507.652313,231.786301,479.486877,253.674606,439.000702,288.262421,436.179626,308.227997,457.931702,280.159088,507.652313" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape9" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17181,-6075,17178" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape10=" value="288.262421,436.179626,253.674606,439.000702,227.127808,409.905609,250.639511,369.172516,297.600616,388.694702,288.262421,436.179626" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape10" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape11=" value="284.036713,526.494690,198.798996,526.494690,210.331009,485.833282,231.786301,479.486877,280.159088,507.652313,284.036713,526.494690" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape11" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape12=" value="231.786301,479.486877,210.331009,485.833282,186.186905,461.038788,190.887512,413.925385,227.127808,409.905609,253.674606,439.000702,231.786301,479.486877" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape12" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape13=" value="176.252594,271.481781,269.589600,271.481781,256.405304,307.099792,234.927597,326.211823,221.272507,325.810394,176.252594,271.481781" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape13" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape14=" value="227.127808,409.905609,190.887512,413.925385,175.465103,399.448792,187.816193,346.765717,221.272507,325.810394,234.927597,326.211823,250.639511,369.172516,227.127808,409.905609" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape14" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape15=" value="136.862793,271.481781,176.252594,271.481781,221.272507,325.810394,187.816193,346.765717,136.862793,328.130890,136.862793,271.481781" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape15" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape16=" value="198.798996,526.494690,136.862793,526.494690,136.862793,472.071106,186.186905,461.038788,210.331009,485.833282,198.798996,526.494690" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape16" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,561,17409" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape17=" value="186.186905,461.038788,136.862793,472.071106,136.862793,401.723999,175.465103,399.448792,190.887512,413.925385,186.186905,461.038788" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape17" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape18=" value="391.875610,477.609009,391.875610,526.494690,344.655701,526.494690,356.075897,483.287598,391.875610,477.609009" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape18" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="update()" script="decl c = getobject();
 canvas_refresh(c);
 
@@ -35,16 +53,23 @@ decl h_max = 526.4946;
 
 canvas_beginPath(c);
 canvas_moveTo(c,
- margin + screendim * srange(shape[0], w_min, w_max),
- margin + screendim * srange(shape[1], h_min, h_max));
+	margin + screendim * srange(shape[0], w_min, w_max),
+ 	margin + screendim * srange(shape[1], h_min, h_max)
+);
 
 decl i, segmentCount = sizeof(shape) / 2;
 for (i=1; i<segmentCount; i++) {
-	canvas_lineTo(c,  margin + screendim * srange(shape[2*i], w_min, w_max),
- margin + screendim * srange(shape[2*i+1], h_min, h_max));
+	canvas_lineTo(c,  
+		margin + screendim * srange(shape[2*i], w_min, w_max),
+ 		margin + screendim * srange(shape[2*i+1], h_min, h_max)
+	);
 }
-canvas_lineTo(c,  margin + screendim * srange(shape[0], w_min, w_max),
- margin + screendim * srange(shape[1], h_min, h_max));
+
+canvas_lineTo(c,  
+	margin + screendim * srange(shape[0], w_min, w_max),
+ 	margin + screendim * srange(shape[1], h_min, h_max)
+);
+
 canvas_closePath(c);
 
 canvas_setLineWidth(c, 2);
@@ -63,7 +88,7 @@ decl center_y = margin + screendim * srange(waveorigin_y[id], h_min, h_max);
 
 if (lightAddress[id] >= 0)
 {
-  canvas_setStrokeStyle(c, {1.0, 0.4, 0.4, 0.4});
+  canvas_setStrokeStyle(c, {1.0, 0.7, 0.8, 0.75});
   decl lightPath = canvas_createPath();
   canvas_arc(lightPath, center_x, center_y, 6, 0, 2*pi, 0);
   canvas_strokePath(c, lightPath);
@@ -72,7 +97,7 @@ if (lightAddress[id] >= 0)
 if (waves[id] > 0) 
 {
   decl wavePath = canvas_createPath();
-  canvas_arc(wavePath, center_x, center_y, waves[id], 0, 6.28318, 0);
+  canvas_arc(wavePath, center_x, center_y, waves[id], 0, 2*pi, 0);
   canvas_setLineWidth(c, 3);
   canvas_setStrokeStyle(c, {0.75, 200, 128, 100});
   canvas_strokePath(c, wavePath);
@@ -86,205 +111,24 @@ lastHitTimes[hit] = time;
 
 canvas_clear(c);
 
-drawShape({
-175.4651, 399.4488,
-136.8628, 401.7240,
-136.8628, 328.1309,
-187.8162, 346.7657, 
-175.4651, 399.4488
-}, 1);
-
-drawShape({
-391.8756, 317.4985,
-391.8756, 408.3838,
-361.5897, 406.2753,
-327.6483, 371.3407,
-332.0065, 349.0492,
-356.1992, 322.9084,
-391.8756, 317.4985
-}, 2);
-
-waveorigin_x[2] = 359;
-waveorigin_y[2] = 360;
-lightAddress[2] = 0;
-
-drawShape({
-391.8756, 408.3838,
-391.8756, 477.6090,
-356.0759, 483.2876,
-330.3382, 459.2326,
-361.5897, 406.2753,
-391.8756, 408.3838
-}, 3);
-
-waveorigin_x[3] = 369;
-waveorigin_y[3] = 446;
-lightAddress[3] = 1;
-
-drawShape({
-321.6553, 271.4818,
-391.8756, 271.4818,
-391.8756, 317.4985,
-356.1992, 322.9084,
-321.6553, 271.4818
-}, 4);
-
-drawShape({
-330.3382, 459.2326,
-308.2280, 457.9317,
-288.2624, 436.1796,
-297.6006, 388.6947,
-327.6483, 371.3407,
-361.5897, 406.2753,
-330.3382, 459.2326
-}, 5);
-
-drawShape({
-344.6557, 526.4946,
-284.0367, 526.4946,
-280.1591, 507.6523,
-308.2280, 457.9317,
-330.3382, 459.2326,
-356.0759, 483.2876,
-344.6557, 526.4946
-}, 6);
-
-waveorigin_x[6] = 323;
-waveorigin_y[6] = 493;
-lightAddress[6] = 2;
-
-drawShape({
-269.5896, 271.4818,
-321.6553, 271.4818,
-356.1992, 322.9084,
-332.0065, 349.0492,
-256.4053, 307.0998,
-269.5896, 271.4818
-}, 7);
-
-waveorigin_x[7] = 300;
-waveorigin_y[7] = 303;
-lightAddress[7] = 3;
-
-drawShape({
-297.6006, 388.6947,
-250.6395, 369.1725,
-234.9276, 326.2118,
-256.4053, 307.0998,
-332.0065, 349.0492,
-327.6483, 371.3407,
-297.6006, 388.6947
-}, 8);
-
-drawShape({
-280.1591, 507.6523,
-231.7863, 479.4869,
-253.6746, 439.0007,
-288.2624, 436.1796,
-308.2280, 457.9317,
-280.1591, 507.6523
-}, 9);
-
-drawShape({
-288.2624, 436.1796,
-253.6746, 439.0007,
-227.1278, 409.9056,
-250.6395, 369.1725,
-297.6006, 388.6947,
-288.2624, 436.1796
-}, 10);
-
-waveorigin_x[10] = 269;
-waveorigin_y[10] = 402;
-lightAddress[10] = 4;
-
-
-drawShape({
-284.0367, 526.4946,
-198.7990, 526.4946,
-210.3310, 485.8333,
-231.7863, 479.4869,
-280.1591, 507.6523,
-284.0367, 526.4946
-}, 11);
-
-drawShape({
-231.7863, 479.4869,
-210.3310, 485.8333,
-186.1869, 461.0388,
-190.8875, 413.9254,
-227.1278, 409.9056,
-253.6746, 439.0007,
-231.7863, 479.4869
-}, 12);
-
-waveorigin_x[12] = 221;
-waveorigin_y[12] = 446;
-lightAddress[12] = 5;
-
-drawShape({
-176.2526, 271.4818,
-269.5896, 271.4818,
-256.4053, 307.0998,
-234.9276, 326.2118,
-221.2725, 325.8104,
-176.2526, 271.4818
-}, 13);
-
-drawShape({
-227.1278, 409.9056,
-190.8875, 413.9254,
-175.4651, 399.4488,
-187.8162, 346.7657,
-221.2725, 325.8104,
-234.9276, 326.2118,
-250.6395, 369.1725,
-227.1278, 409.9056
-}, 14);
-
-drawShape({
-136.8628, 271.4818,
-176.2526, 271.4818,
-221.2725, 325.8104,
-187.8162, 346.7657,
-136.8628, 328.1309,
-136.8628, 271.4818
-}, 15);
-
-waveorigin_x[15] = 180;
-waveorigin_y[15] = 318;
-lightAddress[15] = 6;
-
-drawShape({
-198.7990, 526.4946,
-136.8628, 526.4946,
-136.8628, 472.0711,
-186.1869, 461.0388,
-210.3310, 485.8333,
-198.7990, 526.4946
-}, 16);
-
-waveorigin_x[16] = 168;
-waveorigin_y[16] = 494;
-lightAddress[16] = 7;
-
-drawShape({
-186.1869, 461.0388,
-136.8628, 472.0711,
-136.8628, 401.7240,
-175.4651, 399.4488,
-190.8875, 413.9254,
-186.1869, 461.0388
-}, 17);
-
-drawShape({
-391.8756, 477.6090,
-391.8756, 526.4946,
-344.6557, 526.4946,
-356.0759, 483.2876,
-391.8756, 477.6090
-}, 18);
-
+drawShape(shape1, 1);
+drawShape(shape2, 2);
+drawShape(shape3, 3);
+drawShape(shape4, 4);
+drawShape(shape5, 5);
+drawShape(shape6, 6);
+drawShape(shape7, 7);
+drawShape(shape8, 8);
+drawShape(shape9, 9);
+drawShape(shape10, 10);
+drawShape(shape11, 11);
+drawShape(shape12, 12);
+drawShape(shape13, 13);
+drawShape(shape14, 14);
+drawShape(shape15, 15);
+drawShape(shape16, 16);
+drawShape(shape17, 17);
+drawShape(shape18, 18);
 
 drawBorder();" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onMove(cursor,hit,x,y)" script="decl i;
@@ -336,8 +180,247 @@ canvas_rect(c, margin-1, margin-1, screendim+2, screendim+2);
 canvas_stroke(c);
 
 " trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawBorder" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="init()" script="shape1 = {
+175.4651, 399.4488,
+136.8628, 401.7240,
+136.8628, 328.1309,
+187.8162, 346.7657, 
+175.4651, 399.4488
+};
+
+waveorigin_x[1] = 158;
+waveorigin_y[1] = 367;
+lightAddress[1] = -1;
+
+shape2 = {
+391.8756, 317.4985,
+391.8756, 408.3838,
+361.5897, 406.2753,
+327.6483, 371.3407,
+332.0065, 349.0492,
+356.1992, 322.9084,
+391.8756, 317.4985
+};
+
+waveorigin_x[2] = 359;
+waveorigin_y[2] = 360;
+lightAddress[2] = 0;
+
+shape3 = {
+391.8756, 408.3838,
+391.8756, 477.6090,
+356.0759, 483.2876,
+330.3382, 459.2326,
+361.5897, 406.2753,
+391.8756, 408.3838
+};
+
+waveorigin_x[3] = 369;
+waveorigin_y[3] = 446;
+lightAddress[3] = 1;
+
+shape4 = {
+321.6553, 271.4818,
+391.8756, 271.4818,
+391.8756, 317.4985,
+356.1992, 322.9084,
+321.6553, 271.4818
+};
+
+waveorigin_x[4] = 364;
+waveorigin_y[4] = 293;
+lightAddress[4] = -1;
+
+shape5 = {
+330.3382, 459.2326,
+308.2280, 457.9317,
+288.2624, 436.1796,
+297.6006, 388.6947,
+327.6483, 371.3407,
+361.5897, 406.2753,
+330.3382, 459.2326
+};
+
+waveorigin_x[5] = 322;
+waveorigin_y[5] = 417;
+lightAddress[5] = -1;
+
+shape6 = {
+344.6557, 526.4946,
+284.0367, 526.4946,
+280.1591, 507.6523,
+308.2280, 457.9317,
+330.3382, 459.2326,
+356.0759, 483.2876,
+344.6557, 526.4946
+};
+
+waveorigin_x[6] = 323;
+waveorigin_y[6] = 493;
+lightAddress[6] = 2;
+
+shape7 = {
+269.5896, 271.4818,
+321.6553, 271.4818,
+356.1992, 322.9084,
+332.0065, 349.0492,
+256.4053, 307.0998,
+269.5896, 271.4818
+};
+
+waveorigin_x[7] = 300;
+waveorigin_y[7] = 303;
+lightAddress[7] = 3;
+
+shape8 = {
+297.6006, 388.6947,
+250.6395, 369.1725,
+234.9276, 326.2118,
+256.4053, 307.0998,
+332.0065, 349.0492,
+327.6483, 371.3407,
+297.6006, 388.6947
+};
+
+waveorigin_x[8] = 282;
+waveorigin_y[8] = 350;
+lightAddress[8] = -1;
+
+shape9 = {
+280.1591, 507.6523,
+231.7863, 479.4869,
+253.6746, 439.0007,
+288.2624, 436.1796,
+308.2280, 457.9317,
+280.1591, 507.6523
+};
+
+waveorigin_x[9] = 271;
+waveorigin_y[9] = 468;
+lightAddress[9] = -1;
+
+shape10 = {
+288.2624, 436.1796,
+253.6746, 439.0007,
+227.1278, 409.9056,
+250.6395, 369.1725,
+297.6006, 388.6947,
+288.2624, 436.1796
+};
+
+waveorigin_x[10] = 269;
+waveorigin_y[10] = 402;
+lightAddress[10] = 4;
+
+shape11 = {
+284.0367, 526.4946,
+198.7990, 526.4946,
+210.3310, 485.8333,
+231.7863, 479.4869,
+280.1591, 507.6523,
+284.0367, 526.4946
+};
+
+waveorigin_x[11] = 239;
+waveorigin_y[11] = 508;
+lightAddress[11] = -1;
+
+shape12 = {
+231.7863, 479.4869,
+210.3310, 485.8333,
+186.1869, 461.0388,
+190.8875, 413.9254,
+227.1278, 409.9056,
+253.6746, 439.0007,
+231.7863, 479.4869
+};
+
+waveorigin_x[12] = 221;
+waveorigin_y[12] = 446;
+lightAddress[12] = 5;
+
+shape13 = {
+176.2526, 271.4818,
+269.5896, 271.4818,
+256.4053, 307.0998,
+234.9276, 326.2118,
+221.2725, 325.8104,
+176.2526, 271.4818
+};
+
+waveorigin_x[13] = 227;
+waveorigin_y[13] = 293;
+lightAddress[13] = -1;
+
+shape14 = {
+227.1278, 409.9056,
+190.8875, 413.9254,
+175.4651, 399.4488,
+187.8162, 346.7657,
+221.2725, 325.8104,
+234.9276, 326.2118,
+250.6395, 369.1725,
+227.1278, 409.9056
+};
+
+waveorigin_x[14] = 213;
+waveorigin_y[14] = 372;
+lightAddress[14] = -1;
+
+shape15 = {
+136.8628, 271.4818,
+176.2526, 271.4818,
+221.2725, 325.8104,
+187.8162, 346.7657,
+136.8628, 328.1309,
+136.8628, 271.4818
+};
+
+waveorigin_x[15] = 180;
+waveorigin_y[15] = 318;
+lightAddress[15] = 6;
+
+shape16 = {
+198.7990, 526.4946,
+136.8628, 526.4946,
+136.8628, 472.0711,
+186.1869, 461.0388,
+210.3310, 485.8333,
+198.7990, 526.4946
+};
+
+waveorigin_x[16] = 168;
+waveorigin_y[16] = 494;
+lightAddress[16] = 7;
+
+shape17 = {
+186.1869, 461.0388,
+136.8628, 472.0711,
+136.8628, 401.7240,
+175.4651, 399.4488,
+190.8875, 413.9254,
+186.1869, 461.0388
+};
+
+waveorigin_x[17] = 162;
+waveorigin_y[17] = 434;
+lightAddress[17] = -1;
+
+shape18 = {
+391.8756, 477.6090,
+391.8756, 526.4946,
+344.6557, 526.4946,
+356.0759, 483.2876,
+391.8756, 477.6090
+};
+
+waveorigin_x[18] = 371;
+waveorigin_y[18] = 504;
+lightAddress[18] = -1;
+
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Canvas" text="Canvas2" x="789" y="47" width="128" height="636" id="8" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="1">
+<WINDOW class="Canvas" text="Canvas2" x="789" y="38" width="128" height="648" id="8" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="1">
 <VARIABLE name="position=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas2/position" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="draw()" script="decl c = getobject();
 
@@ -347,7 +430,7 @@ decl rect = getattribute(c, 'rect');
 decl cw = rect[2]; 
 decl ch = rect[3];
 
-canvas_setLineWidth(c, 4);
+canvas_setLineWidth(c, 3);
 canvas_setStrokeStyle(c, {1, 0.6, 0.6, 0.4});
 
 canvas_beginPath(c);
