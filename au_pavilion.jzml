@@ -21,10 +21,15 @@
 <VARIABLE name="shape16=" value="198.798996,526.494690,136.862793,526.494690,136.862793,472.071106,186.186905,461.038788,210.331009,485.833282,198.798996,526.494690" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape16" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,561,17409" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="shape17=" value="186.186905,461.038788,136.862793,472.071106,136.862793,401.723999,175.465103,399.448792,190.887512,413.925385,186.186905,461.038788" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape17" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="shape18=" value="391.875610,477.609009,391.875610,526.494690,344.655701,526.494690,356.075897,483.287598,391.875610,477.609009" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape18" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="screendim=" value="644" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/screendim" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24536,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="w_min=136.8628" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/w_min" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24536,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="w_max=391.8756" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/w_max" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="h_min=271.4818" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/h_min" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-12270,1,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="h_max=526.4946" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/h_max" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="update()" script="decl c = getobject();
 canvas_refresh(c);
 
-decl i;
+decl i, j;
 decl waveMax = 800;
 
 for (i = 1; i < 19; i++)
@@ -36,6 +41,10 @@ for (i = 1; i < 19; i++)
      {
        waves[i] = 0;
      }
+     for (j = 1; j < 19; j++)
+     {
+       lightWavefront(i, j);
+     }
    }
 }
 " trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/update" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -44,12 +53,7 @@ for (i = 1; i < 19; i++)
 decl rect = getattribute(c, 'rect');
 decl cw = rect[2]; 
 decl ch = rect[3];
-decl screendim = min(cw, ch) - 2 * margin;
-
-decl w_min = 136.8628;
-decl h_min = 271.4818;
-decl w_max = 391.8756;
-decl h_max = 526.4946;
+screendim = min(cw, ch) - 2 * margin;
 
 canvas_beginPath(c);
 canvas_moveTo(c,
@@ -108,7 +112,6 @@ hitStates[hit] = cursor;
 lastHitTimes[hit] = time;
 " trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/onHit" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="draw()" script="decl c = getobject();
-
 canvas_clear(c);
 
 drawShape(shape1, 1);
@@ -180,7 +183,8 @@ canvas_rect(c, margin-1, margin-1, screendim+2, screendim+2);
 canvas_stroke(c);
 
 " trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawBorder" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="init()" script="shape1 = {
+<SCRIPT name="init()" script="
+shape1 = {
 175.4651, 399.4488,
 136.8628, 401.7240,
 136.8628, 328.1309,
@@ -418,7 +422,27 @@ waveorigin_x[18] = 371;
 waveorigin_y[18] = 504;
 lightAddress[18] = -1;
 
+
 " trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="lightWavefront(waveId, cellId)" script="if (lightAddress[cellId] < 0) {
+   return;
+}
+
+decl d = dist(
+	waveorigin_x[waveId], waveorigin_y[waveId], 
+	waveorigin_x[cellId], waveorigin_y[cellId]
+);
+
+if (abs(d - screendim * srange(waves[waveId], w_min, w_max)) < 3)
+{
+   //hitStates[cellId] = 1;
+}
+else
+{
+   //hitStates[cellId] = 0;
+}
+
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/lightWavefront" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Canvas" text="Canvas2" x="789" y="38" width="128" height="648" id="8" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="1">
 <VARIABLE name="position=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas2/position" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -506,6 +530,7 @@ else
 <VARIABLE name="lightsDirty=0" send="1" osc_target="0" osc_trigger="1" osc_message="/lightsDirty" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lightAddress={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}" send="1" osc_target="0" osc_trigger="1" osc_message="/lightAddress" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lastHitId=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/lastHitId" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<FUNCTION name="dist(x1,y1,x2,y2)=sqrt(pow(x2-x1, 2) + pow(y2-y1, 2))" send="1"/>
 <SCRIPT name="updateLights()" script="if (lightsDirty)
 {
    oscout(0, '/dmx', lightValues);
