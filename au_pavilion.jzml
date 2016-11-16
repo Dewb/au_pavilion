@@ -3,24 +3,24 @@
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Canvas" text="Canvas" x="0" y="0" width="1024" height="724" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="2">
 <VARIABLE name="margin=40" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/margin" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-12264,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape1=" value="0.151400,0.501800,0,0.510700,0,0.222100,0.199800,0.295200,0.151400,0.501800" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape1" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20432,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape2=" value="1,0.180400,1,0.536800,0.881200,0.528600,0.748100,0.391600,0.765200,0.304200,0.860100,0.201700,1,0.180400" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape2" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16408,-1,-1" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape3=" value="1,0.536800,1,0.808300,0.859600,0.830600,0.758700,0.736200,0.881200,0.528600,1,0.536800" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape3" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12312,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape4=" value="0.724600,0,1,0,1,0.180400,0.860100,0.201700,0.724600,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape4" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,14654,17281" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape5=" value="0.758700,0.736200,0.672000,0.731100,0.593700,0.645800,0.630300,0.459600,0.748100,0.391600,0.881200,0.528600,0.758700,0.736200" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape5" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape6=" value="0.814800,1,0.577100,1,0.561900,0.926100,0.672000,0.731100,0.758700,0.736200,0.859600,0.830600,0.814800,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape6" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17336,-10989,17341" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape7=" value="0.520500,0,0.724600,0,0.860100,0.201700,0.765200,0.304200,0.468800,0.139700,0.520500,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape7" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="48,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape8=" value="0.630300,0.459600,0.446200,0.383100,0.384500,0.214600,0.468800,0.139700,0.765200,0.304200,0.748100,0.391600,0.630300,0.459600" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape8" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape9=" value="0.561900,0.926100,0.372200,0.815700,0.458100,0.656900,0.593700,0.645800,0.672000,0.731100,0.561900,0.926100" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape9" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17181,-6075,17178" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape10=" value="0.593700,0.645800,0.458100,0.656900,0.354000,0.542800,0.446200,0.383100,0.630300,0.459600,0.593700,0.645800" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape10" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape11=" value="0.577100,1,0.242900,1,0.288100,0.840600,0.372200,0.815700,0.561900,0.926100,0.577100,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape11" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape12=" value="0.372200,0.815700,0.288100,0.840600,0.193400,0.743300,0.211900,0.558600,0.354000,0.542800,0.458100,0.656900,0.372200,0.815700" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape12" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape13=" value="0.154500,0,0.520500,0,0.468800,0.139700,0.384500,0.214600,0.331000,0.213000,0.154500,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape13" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape14=" value="0.354000,0.542800,0.211900,0.558600,0.151400,0.501800,0.199800,0.295200,0.331000,0.213000,0.384500,0.214600,0.446200,0.383100,0.354000,0.542800" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape14" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape15=" value="0,0,0.154500,0,0.331000,0.213000,0.199800,0.295200,0,0.222100,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape15" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape16=" value="0.242900,1,0,1,0,0.786600,0.193400,0.743300,0.288100,0.840600,0.242900,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape16" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,561,17409" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape17=" value="0.193400,0.743300,0,0.786600,0,0.510700,0.151400,0.501800,0.211900,0.558600,0.193400,0.743300" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape17" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="shape18=" value="1,0.808300,1,1,0.814800,1,0.859600,0.830600,1,0.808300" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape18" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape1=" value="0,0,0,0.154500,0.213000,0.331000,0.295200,0.199800,0.222100,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape1" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20432,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape2=" value="0,0.154500,0,0.520500,0.139700,0.468800,0.214600,0.384500,0.213000,0.331000,0,0.154500" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape2" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16408,-1,-1" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape3=" value="0,0.520500,0,0.724600,0.201700,0.860100,0.304200,0.765200,0.139700,0.468800,0,0.520500" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape3" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12312,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape4=" value="0,0.724600,0,1,0.180400,1,0.201700,0.860100,0,0.724600" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape4" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,14654,17281" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape5=" value="0.180400,1,0.536800,1,0.528600,0.881200,0.391600,0.748100,0.304200,0.765200,0.201700,0.860100,0.180400,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape5" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape6=" value="0.536800,1,0.808300,1,0.830600,0.859600,0.736200,0.758700,0.528600,0.881200,0.536800,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape6" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17336,-10989,17341" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape7=" value="0.808300,1,1,1,1,0.814800,0.830600,0.859600,0.808300,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape7" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="48,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape8=" value="1,0.814800,1,0.577100,0.926100,0.561900,0.731100,0.672000,0.736200,0.758700,0.830600,0.859600,1,0.814800" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape8" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape9=" value="1,0.577100,1,0.242900,0.840600,0.288100,0.815700,0.372200,0.926100,0.561900,1,0.577100" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape9" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17181,-6075,17178" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape10=" value="1,0.242900,1,0,0.786600,0,0.743300,0.193400,0.840600,0.288100,1,0.242900" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape10" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape11=" value="0.743300,0.193400,0.786600,0,0.510700,0,0.501800,0.151400,0.558600,0.211900,0.743300,0.193400" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape11" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape12=" value="0.501800,0.151400,0.510700,0,0.222100,0,0.295200,0.199800,0.501800,0.151400" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape12" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape13=" value="0.542800,0.354000,0.558600,0.211900,0.501800,0.151400,0.295200,0.199800,0.213000,0.331000,0.214600,0.384500,0.383100,0.446200,0.542800,0.354000" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape13" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape14=" value="0.459600,0.630300,0.383100,0.446200,0.214600,0.384500,0.139700,0.468800,0.304200,0.765200,0.391600,0.748100,0.459600,0.630300" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape14" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape15=" value="0.736200,0.758700,0.731100,0.672000,0.645800,0.593700,0.459600,0.630300,0.391600,0.748100,0.528600,0.881200,0.736200,0.758700" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape15" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape16=" value="0.926100,0.561900,0.815700,0.372200,0.656900,0.458100,0.645800,0.593700,0.731100,0.672000,0.926100,0.561900" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape16" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,561,17409" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape17=" value="0.815700,0.372200,0.840600,0.288100,0.743300,0.193400,0.558600,0.211900,0.542800,0.354000,0.656900,0.458100,0.815700,0.372200" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape17" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17135,-1610,17380" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shape18=" value="0.645800,0.593700,0.656900,0.458100,0.542800,0.354000,0.383100,0.446200,0.459600,0.630300,0.645800,0.593700" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/shape18" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="screendim=" value="644" send="1" osc_target="0" osc_trigger="1" osc_message="/Canvas/screendim" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24536,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="update()" script="decl c = getobject();
 canvas_refresh(c);
@@ -127,206 +127,206 @@ canvas_stroke(c);
 
 " trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/drawBorder" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="init()" script="shape1 = {
-0.1514, 0.5018, 
-0, 0.5107, 
-0, 0.2221, 
-0.1998, 0.2952, 
-0.1514, 0.5018
-};
-waveorigin_x[1] = 0.08419;
-waveorigin_y[1] = 0.3752;
-
-shape2 = {
-1, 0.1804, 
-1, 0.5368, 
-0.8812, 0.5286, 
-0.7481, 0.3916, 
-0.7652, 0.3042, 
-0.8601, 0.2017, 
-1, 0.1804
-};
-waveorigin_x[2] = 0.8973;
-waveorigin_y[2] = 0.3593;
-
-shape3 = {
-1, 0.5368, 
-1, 0.8083, 
-0.8596, 0.8306, 
-0.7587, 0.7362, 
-0.8812, 0.5286, 
-1, 0.5368
-};
-waveorigin_x[3] = 0.9032;
-waveorigin_y[3] = 0.6856;
-
-shape4 = {
-0.7246, 0, 
-1, 0, 
-1, 0.1804, 
-0.8601, 0.2017, 
-0.7246, 0
-};
-waveorigin_x[4] = 0.8903;
-waveorigin_y[4] = 0.08602;
-
-shape5 = {
-0.7587, 0.7362, 
-0.672, 0.7311, 
-0.5937, 0.6458, 
-0.6303, 0.4596, 
-0.7481, 0.3916, 
-0.8812, 0.5286, 
-0.7587, 0.7362
-};
-waveorigin_x[5] = 0.7258;
-waveorigin_y[5] = 0.5696;
-
-shape6 = {
-0.8148, 1, 
-0.5771, 1, 
-0.5619, 0.9261, 
-0.672, 0.7311, 
-0.7587, 0.7362, 
-0.8596, 0.8306, 
-0.8148, 1
-};
-waveorigin_x[6] = 0.7137;
-waveorigin_y[6] = 0.8816;
-
-shape7 = {
-0.5205, 0, 
-0.7246, 0, 
-0.8601, 0.2017, 
-0.7652, 0.3042, 
-0.4688, 0.1397, 
-0.5205, 0
-};
-waveorigin_x[7] = 0.6665;
-waveorigin_y[7] = 0.1327;
-
-shape8 = {
-0.6303, 0.4596, 
-0.4462, 0.3831, 
-0.3845, 0.2146, 
-0.4688, 0.1397, 
-0.7652, 0.3042, 
-0.7481, 0.3916, 
-0.6303, 0.4596
-};
-waveorigin_x[8] = 0.5679;
-waveorigin_y[8] = 0.3078;
-
-shape9 = {
-0.5619, 0.9261, 
-0.3722, 0.8157, 
-0.4581, 0.6569, 
-0.5937, 0.6458, 
-0.672, 0.7311, 
-0.5619, 0.9261
-};
-waveorigin_x[9] = 0.5265;
-waveorigin_y[9] = 0.7709;
-
-shape10 = {
-0.5937, 0.6458, 
-0.4581, 0.6569, 
-0.354, 0.5428, 
-0.4462, 0.3831, 
-0.6303, 0.4596, 
-0.5937, 0.6458
-};
-waveorigin_x[10] = 0.4989;
-waveorigin_y[10] = 0.5287;
-
-shape11 = {
-0.5771, 1, 
-0.2429, 1, 
-0.2881, 0.8406, 
-0.3722, 0.8157, 
-0.5619, 0.9261, 
-0.5771, 1
-};
-waveorigin_x[11] = 0.3989;
-waveorigin_y[11] = 0.9275;
-
-shape12 = {
-0.3722, 0.8157, 
-0.2881, 0.8406, 
-0.1934, 0.7433, 
-0.2119, 0.5586, 
-0.354, 0.5428, 
-0.4581, 0.6569, 
-0.3722, 0.8157
-};
-waveorigin_x[12] = 0.3129;
-waveorigin_y[12] = 0.683;
-
-shape13 = {
-0.1545, 0, 
-0.5205, 0, 
-0.4688, 0.1397, 
-0.3845, 0.2146, 
-0.331, 0.213, 
-0.1545, 0
-};
-waveorigin_x[13] = 0.3544;
-waveorigin_y[13] = 0.0834;
-
-shape14 = {
-0.354, 0.5428, 
-0.2119, 0.5586, 
-0.1514, 0.5018, 
-0.1998, 0.2952, 
-0.331, 0.213, 
-0.3845, 0.2146, 
-0.4462, 0.3831, 
-0.354, 0.5428
-};
-waveorigin_x[14] = 0.2984;
-waveorigin_y[14] = 0.3941;
-
-shape15 = {
 0, 0, 
-0.1545, 0, 
-0.331, 0.213, 
-0.1998, 0.2952, 
-0, 0.2221, 
+0, 0.1545, 
+0.213, 0.331, 
+0.2952, 0.1998, 
+0.2221, 0, 
 0, 0
 };
-waveorigin_x[15] = 0.1362;
-waveorigin_y[15] = 0.146;
+waveorigin_x[1] = 0.146;
+waveorigin_y[1] = 0.1362;
+
+shape2 = {
+0, 0.1545, 
+0, 0.5205, 
+0.1397, 0.4688, 
+0.2146, 0.3845, 
+0.213, 0.331, 
+0, 0.1545
+};
+waveorigin_x[2] = 0.0834;
+waveorigin_y[2] = 0.3544;
+
+shape3 = {
+0, 0.5205, 
+0, 0.7246, 
+0.2017, 0.8601, 
+0.3042, 0.7652, 
+0.1397, 0.4688, 
+0, 0.5205
+};
+waveorigin_x[3] = 0.1327;
+waveorigin_y[3] = 0.6665;
+
+shape4 = {
+0, 0.7246, 
+0, 1, 
+0.1804, 1, 
+0.2017, 0.8601, 
+0, 0.7246
+};
+waveorigin_x[4] = 0.08602;
+waveorigin_y[4] = 0.8903;
+
+shape5 = {
+0.1804, 1, 
+0.5368, 1, 
+0.5286, 0.8812, 
+0.3916, 0.7481, 
+0.3042, 0.7652, 
+0.2017, 0.8601, 
+0.1804, 1
+};
+waveorigin_x[5] = 0.3593;
+waveorigin_y[5] = 0.8973;
+
+shape6 = {
+0.5368, 1, 
+0.8083, 1, 
+0.8306, 0.8596, 
+0.7362, 0.7587, 
+0.5286, 0.8812, 
+0.5368, 1
+};
+waveorigin_x[6] = 0.6856;
+waveorigin_y[6] = 0.9032;
+
+shape7 = {
+0.8083, 1, 
+1, 1, 
+1, 0.8148, 
+0.8306, 0.8596, 
+0.8083, 1
+};
+waveorigin_x[7] = 0.914;
+waveorigin_y[7] = 0.92;
+
+shape8 = {
+1, 0.8148, 
+1, 0.5771, 
+0.9261, 0.5619, 
+0.7311, 0.672, 
+0.7362, 0.7587, 
+0.8306, 0.8596, 
+1, 0.8148
+};
+waveorigin_x[8] = 0.8816;
+waveorigin_y[8] = 0.7137;
+
+shape9 = {
+1, 0.5771, 
+1, 0.2429, 
+0.8406, 0.2881, 
+0.8157, 0.3722, 
+0.9261, 0.5619, 
+1, 0.5771
+};
+waveorigin_x[9] = 0.9275;
+waveorigin_y[9] = 0.3989;
+
+shape10 = {
+1, 0.2429, 
+1, 0, 
+0.7866, 0, 
+0.7433, 0.1934, 
+0.8406, 0.2881, 
+1, 0.2429
+};
+waveorigin_x[10] = 0.8822;
+waveorigin_y[10] = 0.1335;
+
+shape11 = {
+0.7433, 0.1934, 
+0.7866, 0, 
+0.5107, 0, 
+0.5018, 0.1514, 
+0.5586, 0.2119, 
+0.7433, 0.1934
+};
+waveorigin_x[11] = 0.6366;
+waveorigin_y[11] = 0.09709;
+
+shape12 = {
+0.5018, 0.1514, 
+0.5107, 0, 
+0.2221, 0, 
+0.2952, 0.1998, 
+0.5018, 0.1514
+};
+waveorigin_x[12] = 0.3752;
+waveorigin_y[12] = 0.08419;
+
+shape13 = {
+0.5428, 0.354, 
+0.5586, 0.2119, 
+0.5018, 0.1514, 
+0.2952, 0.1998, 
+0.213, 0.331, 
+0.2146, 0.3845, 
+0.3831, 0.4462, 
+0.5428, 0.354
+};
+waveorigin_x[13] = 0.3941;
+waveorigin_y[13] = 0.2984;
+
+shape14 = {
+0.4596, 0.6303, 
+0.3831, 0.4462, 
+0.2146, 0.3845, 
+0.1397, 0.4688, 
+0.3042, 0.7652, 
+0.3916, 0.7481, 
+0.4596, 0.6303
+};
+waveorigin_x[14] = 0.3078;
+waveorigin_y[14] = 0.5679;
+
+shape15 = {
+0.7362, 0.7587, 
+0.7311, 0.672, 
+0.6458, 0.5937, 
+0.4596, 0.6303, 
+0.3916, 0.7481, 
+0.5286, 0.8812, 
+0.7362, 0.7587
+};
+waveorigin_x[15] = 0.5696;
+waveorigin_y[15] = 0.7258;
 
 shape16 = {
-0.2429, 1, 
-0, 1, 
-0, 0.7866, 
-0.1934, 0.7433, 
-0.2881, 0.8406, 
-0.2429, 1
+0.9261, 0.5619, 
+0.8157, 0.3722, 
+0.6569, 0.4581, 
+0.6458, 0.5937, 
+0.7311, 0.672, 
+0.9261, 0.5619
 };
-waveorigin_x[16] = 0.1335;
-waveorigin_y[16] = 0.8822;
+waveorigin_x[16] = 0.7709;
+waveorigin_y[16] = 0.5265;
 
 shape17 = {
-0.1934, 0.7433, 
-0, 0.7866, 
-0, 0.5107, 
-0.1514, 0.5018, 
-0.2119, 0.5586, 
-0.1934, 0.7433
+0.8157, 0.3722, 
+0.8406, 0.2881, 
+0.7433, 0.1934, 
+0.5586, 0.2119, 
+0.5428, 0.354, 
+0.6569, 0.4581, 
+0.8157, 0.3722
 };
-waveorigin_x[17] = 0.09709;
-waveorigin_y[17] = 0.6366;
+waveorigin_x[17] = 0.683;
+waveorigin_y[17] = 0.3129;
 
 shape18 = {
-1, 0.8083, 
-1, 1, 
-0.8148, 1, 
-0.8596, 0.8306, 
-1, 0.8083
+0.6458, 0.5937, 
+0.6569, 0.4581, 
+0.5428, 0.354, 
+0.3831, 0.4462, 
+0.4596, 0.6303, 
+0.6458, 0.5937
 };
-waveorigin_x[18] = 0.92;
-waveorigin_y[18] = 0.914;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+waveorigin_x[18] = 0.5287;
+waveorigin_y[18] = 0.4989;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Canvas/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="lightWavefront(waveId, cellId)" script="
 decl lightId = lightAddress[cellId];
 
@@ -515,7 +515,7 @@ else
 <VARIABLE name="wave_speed={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/wave_speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,1280,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lastHitTimes={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/lastHitTimes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="19,2,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lightsDirty=0" send="1" osc_target="0" osc_trigger="1" osc_message="/lightsDirty" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="lightAddress={-1,-1,0,1,-1,-1,2,3,-1,-1,4,-1,5,-1,-1,6,7,-1,-1}" send="1" osc_target="0" osc_trigger="1" osc_message="/lightAddress" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lightAddress={-1,0,-1,1,-1,2,3,-1,4,-1,5,-1,-1,-1,-1,-1,-1,6,7}" send="1" osc_target="0" osc_trigger="1" osc_message="/lightAddress" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lastHitId=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/lastHitId" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <FUNCTION name="dist(x1,y1,x2,y2)=sqrt(pow(x2-x1, 2) + pow(y2-y1, 2))" send="1"/>
 <VARIABLE name="distances={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/distances" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28656,708,731" kbmouse_scale="0,1,0,1"/>
