@@ -28,7 +28,7 @@ canvas_refresh(c);
 decl i, j;
 decl waveMax = 1400;
 
-for (i = 1; i < 19; i++)
+for (i = 0; i < 19; i++)
 {
 	waveLightAmounts[i] = 0;
 }
@@ -106,7 +106,7 @@ for (i=1; i < 19; i++)
 
 decl holdTime = time - lastHitTimes[hit];
 
-if (numTouches == 0 && holdTime < 0.500)
+if (numTouches == 0 && holdTime < 0.250)
 {
    // quick tap
    waves[hit] = 1;
@@ -350,10 +350,6 @@ if (x < waveWidth)
 {
    waveLightAmounts[lightId] = max(old, waveWidth - x);
 }
-else
-{
-   waveLightAmounts[lightId] = 0;
-}
 
 if (waveLightAmounts[lightId] - old > 0.000001)
 {
@@ -396,7 +392,7 @@ if (lightAddress[id] >= 0)
 {
     decl l = waveLightAmounts[lightAddress[id]];
 	if (l > 0) {
-    	canvas_setFillStyle(c, {l * 4, l * 4, l * 3});
+    	canvas_setFillStyle(c, {l * 3.5, 50, 30, 10});
 		canvas_fill(c);
 	}
 }
@@ -476,7 +472,7 @@ updateLights(1.0 - y / ch);" trigger_script="" trigger_type="255" trigger_name="
 if (pos < 0) { pos = 0; }
 if (pos > 1) { pos = 1; }
 
-pos = pos * 0.8; // leave a little headroom for waves
+pos = pos * (1 - waveWidth); // leave headroom for waves
 
 decl numTouches = 0;
 
@@ -520,7 +516,7 @@ else
 <FUNCTION name="dist(x1,y1,x2,y2)=sqrt(pow(x2-x1, 2) + pow(y2-y1, 2))" send="1"/>
 <VARIABLE name="distances={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/distances" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28656,708,731" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="speedScale=0.7" send="1" osc_target="0" osc_trigger="1" osc_message="/speedScale" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20497,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="waveWidth=0.2" send="1" osc_target="0" osc_trigger="1" osc_message="/waveWidth" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="48,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="waveWidth=0.25" send="1" osc_target="0" osc_trigger="1" osc_message="/waveWidth" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="48,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="waveLightAmounts={0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/waveLightAmounts" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4112,-8816,19" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="totalLight={0,0,0,0,0,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/totalLight" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-13337,17404" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="updateLights()" script="if (lightsDirty)
