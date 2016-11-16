@@ -522,10 +522,17 @@ else
 <SCRIPT name="updateLights()" script="if (lightsDirty)
 {
 	decl i, l;
+    decl headroom;
 	for (i=0; i<8; i++) 
  	{
-		totalLight[i] = min(1.0, lightValues[i] + waveLightAmounts[i]);
+		headroom = max(headroom, 1 - lightValues[i]);
 	}
+
+	for (i=0; i<8; i++) 
+ 	{
+		totalLight[i] = min(1.0, lightValues[i] + (headroom/waveWidth) * waveLightAmounts[i]);
+	}
+
 	oscout(0, '/dmx', totalLight);
 	oscout(1, '/dmx', totalLight);
 	lightsDirty = 0;
